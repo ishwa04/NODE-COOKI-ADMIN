@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+   <!-- Custom fonts for this template-->
+   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   <link
+       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+       rel="stylesheet">
+
+   <!-- Custom styles for this template-->
+   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+  data-sidebar-position="fixed" data-header-position="fixed">
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include("aside")%>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+           <%- include("header")%>
+            <!-- End of Topbar -->
+
+    </div>
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Update Data</h5>
+          <div class="card">
+            <div class="card-body">
+              <form method="post" action="/update">
+                <div class="mb-3">
+                  <input type="text" name="id" value="<%=data.id%>" hidden>
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" name="name" value="<%=data.name%>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">city</label>
+                  <select name="city" class="form-control">
+                      <option value="" hidden>--select--</option>
+                      <option value="rajkot" <%=data.city == "rajkot" ? "selected" : "" %> >Rajkot</option>
+                      <option value="surat" <%=data.city == "surat" ? "selected" : "" %>>Surat</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="py-6 px-6 text-center">
+        <p class="mb-0 fs-4">Design and Developed by <a href="https://adminmart.com/" target="_blank"
+            class="pe-1 text-primary text-decoration-underline">AdminMart.com</a> Distributed by <a href="https://themewagon.com/" target="_blank"
+            class="pe-1 text-primary text-decoration-underline">ThemeWagon</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+</body>
+</html>
